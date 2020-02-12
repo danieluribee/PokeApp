@@ -1,0 +1,19 @@
+<div class="topnav">
+  <select
+    class="searchType"
+    name="dropSearch"
+    id="searchDrop"
+    (change)="searchChangeHandler($event)"
+  >
+    <option value="By Name">By Name</option>
+    <option value="All">All</option>
+  </select>
+
+  <input type="text" id="searchInput" placeholder="Search Pokemons...." />
+
+  <button type="button" class="searchType" (click)="btnSearchClick($event)">
+    Search
+  </button>
+
+  <app-grid [pokemons]="pokemons"></app-grid>>
+</div>

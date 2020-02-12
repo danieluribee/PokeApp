@@ -1,0 +1,35 @@
+<table class="pokemonsTable">
+  <tr>
+    <th>NAME</th>
+    <th>IMAGE</th>
+  </tr>
+  <tr *ngFor="let pokemon of this.pokemons.results">
+    <td>{{ pokemon.name }}</td>
+    <td>{{ pokemon.url }}</td>
+  </tr>
+  <tr>
+    <td
+      *ngIf="
+        (pokemons.previous !== null && pokemons.previous !== undefined) ||
+        (pokemons.next !== null && pokemons.next !== undefined)
+      "
+    >
+      <button
+        *ngIf="pokemons.previous !== null && pokemons.previous !== undefined"
+        type="button"
+        class="moveSearch"
+        (click)="movePage(pokemons.previous)"
+      >
+        Back
+      </button>
+      <button
+        *ngIf="pokemons.next !== null && pokemons.next !== undefined"
+        type="button"
+        class="moveSearch"
+        (click)="movePage(pokemons.next)"
+      >
+        Next
+      </button>
+    </td>
+  </tr>
+</table>
